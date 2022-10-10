@@ -53,6 +53,13 @@ git clone https://github.com/warrior0986/magaya.git
 cd magaya
 docker compose up --build --force-recreate -d
 ```
+#Testing with Postman
+Import the postman collection `Magaya Test.postman_collection.json` into your postman client, in order to make it work you need to run the queues (database), inside your docker container run:
+
+    php artisan queue:work
+
+Almost all the routes are protected by token, so first generate the token with the GET token request and saved into the collection Bearer token option.
+
 # Testing API
 
 Inside the docker container run
